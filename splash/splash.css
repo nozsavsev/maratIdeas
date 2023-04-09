@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+
+/*disable h1 highlights*/
+h1:hover {
+    
+}
+
+.labelText {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.splashContainer {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+#checkbox:checked~div img {
+    opacity: 0;
+    max-height: 0;
+}
+
+.logo {
+    width: 15rem;
+    height: 15rem;
+    cursor: pointer;
+    animation: rotate-sign 5s linear infinite;
+    transition: all 0.5s linear;
+}
+
+.hide {
+    transition: 1s;
+}
+
+.hide:checked~label, .hide:checked~img, .hide:checked~h1, .hide:checked~div * {
+    opacity: 0;
+    transform: scale(10);
+    pointer-events: none;
+}
+
+@keyframes rotate-sign {
+    from {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    to {
+        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+}

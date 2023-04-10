@@ -39,33 +39,51 @@
 
 
 .bnc-lr-sp2 {
-    animation: lr calc(var(--baseSpeedX) / 3) linear infinite alternate;
-}
-
-.bnc-tb-sp2 {
-    animation: tb calc(var(--baseSpeedY) / 3) linear infinite alternate;
-}
- 
-
-
-
-.bnc-lr-sp3 {
     animation: lr calc(var(--baseSpeedX) / 5) linear infinite alternate;
 }
 
-.bnc-tb-sp3 {
+.bnc-tb-sp2 {
     animation: tb calc(var(--baseSpeedY) / 5) linear infinite alternate;
 }
 
 
 
+
+.bnc-lr-sp3 {
+    animation: lr calc(var(--baseSpeedX) / 10) linear infinite alternate;
+}
+
+.bnc-tb-sp3 {
+    animation: tb calc(var(--baseSpeedY) / 10) linear infinite alternate;
+}
+
+
+
 .bnc-lr-sp4 {
-    animation: lr calc(var(--baseSpeedX) / 7) linear infinite alternate;
+    animation: lr calc(var(--baseSpeedX) / 17) linear infinite alternate;
 }
 
 .bnc-tb-sp4 {
-    animation: tb calc(var(--baseSpeedY) / 7) linear infinite alternate;
+    animation: tb calc(var(--baseSpeedY) / 17) linear infinite alternate;
 }
+
+
+.bnc-lr-sp4-1 {
+    animation: lr calc(var(--baseSpeedX) / 20) linear infinite alternate;
+}
+
+.bnc-tb-sp4-1 {
+    animation: tb calc(var(--baseSpeedY) / 20) linear infinite alternate;
+}
+
+.bnc-lr-sp4-2 {
+    animation: lr calc(var(--baseSpeedX) / 25) linear infinite alternate;
+}
+
+.bnc-tb-sp4-2 {
+    animation: tb calc(var(--baseSpeedY) / 25) linear infinite alternate;
+}
+
 
 @keyframes lr {
     from {
@@ -108,34 +126,39 @@
 }
 
 .hideSP1 {
-    display: none;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .hideSP2 {
-    display: none;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .hideSP3 {
-    display: none;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .hideSP4 {
-    display: none;
+    pointer-events: none;
+    opacity: 0;
 }
+
 #sp1:checked~.hideSP1 {
-    display: block;
+    opacity: 1;
 }
 
 #sp2:checked~.hideSP2 {
-    display: block;
+    opacity: 1;
 }
 
 #sp3:checked~.hideSP3 {
-    display: block;
+    opacity: 1;
 }
 
 #sp4:checked~.hideSP4 {
-    display: block;
+    opacity: 1;
 }
 
 .visualSP1, .visualSP2, .visualSP3, .visualSP4 {
@@ -166,4 +189,61 @@
     background-color: #FC003C;
     color: white;
     font-weight: 700;
+}
+
+
+.rotateAppearRight {
+    opacity: 0;
+    width: 10rem;
+    height: 10rem;
+    transform: rotateZ(0);
+}
+
+#sp4:checked~.rotateAppearRight {
+    opacity: 1;
+    width: 10rem;
+    height: 10rem;
+    animation: rotateAppearRight 1s ease-in-out;
+    transform: rotateZ(45deg);
+}
+
+
+
+
+.rotateAppearLeft {
+    opacity: 0;
+    width: 10rem;
+    height: 10rem;
+    transform: rotateZ(0);
+}
+
+#sp4:checked~.rotateAppearLeft {
+    opacity: 1;
+    width: 10rem;
+    height: 10rem;
+    animation: rotateAppearLeft 1s ease-in-out;
+    transform: rotateZ(-45deg);
+}
+
+
+@keyframes rotateAppearRight {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0);
+        transform: rotateZ(45deg);
+    }
+}
+
+@keyframes rotateAppearLeft {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0);
+        transform: rotateZ(-45deg);
+    }
 }

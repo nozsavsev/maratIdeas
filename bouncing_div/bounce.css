@@ -27,6 +27,7 @@
 
 
 
+
 .bnc-lr-sp1 {
     animation: lr var(--baseSpeedX) linear infinite alternate;
 }
@@ -117,8 +118,8 @@
 
 .hdContainer {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 0px;
+    left: 0px;
     width: var(--bounceLogoW);
     height: var(--bounceLogoH);
     z-index: 0;
@@ -146,18 +147,22 @@
 }
 
 #sp1:checked~.hideSP1 {
+    pointer-events: auto;
     opacity: 1;
 }
 
 #sp2:checked~.hideSP2 {
+    pointer-events: auto;
     opacity: 1;
 }
 
 #sp3:checked~.hideSP3 {
+    pointer-events: auto;
     opacity: 1;
 }
 
 #sp4:checked~.hideSP4 {
+    pointer-events: auto;
     opacity: 1;
 }
 

@@ -1,0 +1,169 @@
+:root {
+    --bounceLogoW: 10vw;
+    --bounceLogoH: 10vw;
+
+
+    --baseSpeedX: 16s;
+    --baseSpeedY: 9s;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    z-index: 10;
+}
+
+.bounce-logo {
+    cursor: pointer;
+    width: var(--bounceLogoW);
+    height: var(--bounceLogoH);
+    object-fit: contain;
+    z-index: 0;
+}
+
+
+
+.bnc-lr-sp1 {
+    animation: lr var(--baseSpeedX) linear infinite alternate;
+}
+
+.bnc-tb-sp1 {
+    animation: tb var(--baseSpeedY) linear infinite alternate;
+}
+
+
+
+
+.bnc-lr-sp2 {
+    animation: lr calc(var(--baseSpeedX) / 3) linear infinite alternate;
+}
+
+.bnc-tb-sp2 {
+    animation: tb calc(var(--baseSpeedY) / 3) linear infinite alternate;
+}
+ 
+
+
+
+.bnc-lr-sp3 {
+    animation: lr calc(var(--baseSpeedX) / 5) linear infinite alternate;
+}
+
+.bnc-tb-sp3 {
+    animation: tb calc(var(--baseSpeedY) / 5) linear infinite alternate;
+}
+
+
+
+.bnc-lr-sp4 {
+    animation: lr calc(var(--baseSpeedX) / 7) linear infinite alternate;
+}
+
+.bnc-tb-sp4 {
+    animation: tb calc(var(--baseSpeedY) / 7) linear infinite alternate;
+}
+
+@keyframes lr {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw - var(--bounceLogoW)));
+    }
+}
+
+@keyframes tb {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(100vh - var(--bounceLogoW)));
+    }
+}
+
+.radioContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2em;
+
+}
+
+.hdContainer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: var(--bounceLogoW);
+    height: var(--bounceLogoH);
+    z-index: 0;
+
+}
+
+.hideSP1 {
+    display: none;
+}
+
+.hideSP2 {
+    display: none;
+}
+
+.hideSP3 {
+    display: none;
+}
+
+.hideSP4 {
+    display: none;
+}
+#sp1:checked~.hideSP1 {
+    display: block;
+}
+
+#sp2:checked~.hideSP2 {
+    display: block;
+}
+
+#sp3:checked~.hideSP3 {
+    display: block;
+}
+
+#sp4:checked~.hideSP4 {
+    display: block;
+}
+
+.visualSP1, .visualSP2, .visualSP3, .visualSP4 {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#sp1:checked~.visualSP1 {
+    background-color: #2760B7;
+    color: white;
+    font-weight: 700;
+}
+
+#sp2:checked~.visualSP2 {
+    background-color: #21942d;
+    color: white;
+    font-weight: 700;
+}
+
+#sp3:checked~.visualSP3 {
+    background-color: #FFD600;
+    color: black;
+    font-weight: 700;
+}
+
+#sp4:checked~.visualSP4 {
+    background-color: #FC003C;
+    color: white;
+    font-weight: 700;
+}
